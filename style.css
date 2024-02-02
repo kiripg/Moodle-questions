@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Rubik:wght@300;400;700&display=swap');
+@import url(https://necolas.github.io/normalize.css/latest/normalize.css);
+
+
+/**************** ESTILOS GENERALES ****************/
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --primary: #607d8b;
+  --primary-dark: #263238;
+  --primary-light: #b0bec5;
+  --white: #eaeaea;
+  --black: #0f0f0f;
+  --bg-mark: #cfd8dc;
+  --font-title: 'Montserrat', Arial, Helvetica, sans-serif;
+  --font-text: 'Rubik', Tahoma, Geneva, Verdana, sans-serif 
+}
+
+body{
+  color: var(--text);
+  background-color: var(--white);
+  font-family: var(--font-text);
+  font-weight: 300;
+}
+
+main{
+  padding: 2rem 1.5rem;
+  width: 80ch;
+  margin: auto;
+}
+
+h1,h2,h3{
+  font-family: var(--font-title);
+}
+
+ul{
+  list-style: square;
+}
+
+a{
+  color: var(--primary);
+  font-weight: 700;
+}
+
+form {
+  margin: 1.5rem 0;
+  background-color: var(--primary-light);
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+input, textarea {
+  display: block;
+  border: 1px solid var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--primary);
+}
+
+input[type="submit"],
+button {
+  background-color: var(--primary);
+  padding: 0.5rem 1rem;
+  color: #eaeaea;
+  cursor: pointer;
+  transition: 0.25s;
+  border: none;
+  border-radius: 0.3rem;
+  width: 22%;
+  height: 3.5rem;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+fieldset {
+  border-radius: 0.3rem;
+  padding: 1rem;
+  border-color: var(--primary) ;
+}
+
+fieldset label {
+  margin: 0.25rem 0;
+}
+
+textarea{
+  resize: vertical;
+}
+
+legend {
+  padding: 0.25rem 1ch;
+  font-weight: 400;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 0.5rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text);
+}
+
+/***************** CLASES Y CONTENEDORES***************/
+.main_title{
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.advertencia, #divPreguntas{
+  background-color: var(--primary-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.formulario, .preguntas{
+  margin-top: 3rem;
+}
+
+.botones{
+  display: flex;
+  justify-content: space-between;
+}
+
+#divErrores:empty{
+  display: none;
+}
+
+#divErrores{
+  background-color: #f7d8d8;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #b70000;
+  font-weight: 400;
+}
+
+#divInfo{
+  background-color: var(--primary-light);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & button{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.25rem 0.5rem;
+  }
+  &.hidden{
+    display: none;
+  }
+}
+
+#divPreguntas {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  & .pregunta{
+    background-color: hsl(200, 15%, 85%);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    & ul{
+      list-style: none;
+      padding: 0;
+      & li{
+        padding-left: 1rem;
+      }
+      & li:first-child{
+        font-weight: 700;
+        background-color: var(--primary-light);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+      & li:nth-child(2){
+        font-weight: 400;
+      }
+    }
+  }
+  & .botones button{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+  }
+}
+
+footer{
+  text-align: center;
+  background-color: var(--primary-light);
+  padding-block: 1rem;
+  color: var(--primary-dark);
+  
+}

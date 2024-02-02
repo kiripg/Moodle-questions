@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Cuestionarios para la moodle</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="objetos.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <main>
+    <h1 class="main_title">Cuestionarios para la moodle</h1>
+    <section class="advertencia">
+      <p><strong>Importante</strong>: existen caracteres que no se pueden usar ni en las preguntas ni en las respuestas, pues tienen un significado especial en el formato GIFT de las preguntas de Moodle (para más información visite la página del formato GIFT).</p>
+      <p>Los caracteres que hay que evitar son los siguientes:</p>
+      <ul>
+        <li>~</li>
+        <li>#</li>
+        <li>=</li>
+        <li>}</li>
+        <li>{</li>
+        <li>:</li>
+      </ul>
+      <p>Para evitar problemas, lo ideal sería no usar esos caracteres. En caso de que sea estrictamente necesario usarlos, se usará el caracter \ automáticamente para quitarles el significado especial. Por ejemplo, A = B + C ⇨ A \= B + C.</p>
+    </section>
+    <section class="formulario">
+      <h2>Gestión de preguntas</h2>
+      <form action="">
+        <fieldset>
+          <legend>Pregunta</legend>
+          <input type="hidden" name="txtId" value="0">
+          <div>
+            <label for="txtPregunta">Enunciado:</label>
+            <textarea name="txtPregunta" id="txtPregunta" rows="5"></textarea>
+          </div>
+          <div>
+            <label for="txtCorrecta">Respuesta correcta:</label>
+            <input type="text" name="txtCorrecta" id="txtCorrecta">
+          </div>
+          <div>
+            <label for="txtIncorrecta01">Respuesta incorrecta:</label>
+            <input type="text" name="incorrectas" id="txtIncorrecta01">
+          </div>
+          <div>
+            <label for="txtIncorrecta02">Respuesta incorrecta:</label>
+            <input type="text" name="incorrectas" id="txtIncorrecta02">
+          </div>
+          <div>
+            <label for="txtIncorrecta03">Respuesta incorrecta:</label>
+            <input type="text" name="incorrectas" id="txtIncorrecta03">
+          </div>
+        </fieldset>
+        <div class="botones">
+          <input type="submit" value="Crear pregunta">
+          <button type="button" id="btnGenerarArchivo">Generar archivo</button>
+          <button type="button" id="btnBorrarPreguntas">Borrar todas las preguntas</button>
+          <button type="button" id="btnGuardarPreguntas">Guardar todas las preguntas</button>
+        </div>
+      </form>
+      <div id="divErrores"></div>
+         <!-- El siguiente div no lo pide el enunciado, pero nos parecía útil mandar infomación al usuario si al pulsar cualquier botón del formulario, todo ha funcinado correctamente. Este mensaje podrá ser cerrado por el usuario, si no, desaparecerá transcurrido 5 segundos -->
+      <div id="divInfo" class="hidden">
+        <span class="mensajeInfo"></span>
+        <button title="Cerrar">x</button>
+      </div>
+    </section>
+    <section class="preguntas">
+      <h2>Listado de preguntas</h2>
+      <div id="divPreguntas"></div>
+    </section>
+  </main>
+  <footer>
+    <p>David Guerrero Bernal</p>
+    <p>Aarón Morales Hermosín</p>
+    <p>Kirissa Povedano García</p>
+    <p>2<sup>o</sup> DAW - IES. Cristóbal de Monroy</p>
+  </footer>
+</body>
+</html>
